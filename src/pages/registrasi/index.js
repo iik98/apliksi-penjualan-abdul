@@ -16,6 +16,9 @@ import isEmail from 'validator/lib/isEmail';
 
 // firebase Hook
 import {useFirebase} from '../../components/FirebaseProvider';
+
+// app components
+import AppLoading from '../../components/AppLoading';
 function Registrasi(){
     const classes = useStyles();
 
@@ -33,7 +36,7 @@ function Registrasi(){
 
     const [isSubmitting, setSubmitting] = useState(false);
 
-    const {auth, user} = useFirebase();
+    const {auth, user, loading} = useFirebase();
 
     const handleChange = e => {
         setForm({
@@ -107,8 +110,12 @@ function Registrasi(){
         }
     }
 
+    if(loading){
+
+        return <AppLoading/>
+    }
     if(user){
-        return <Redirect to="/"/>
+        return <Redirect to="/" />
     }
 
     console.log(user)

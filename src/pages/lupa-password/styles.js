@@ -13,9 +13,6 @@ const useStyles = makeStyles(theme=>({
     },
     buttons:{
         marginTop: theme.spacing(6)
-    },
-    forgotPassword:{
-        marginTop: theme.spacing(3)
     }
 }))
 

@@ -83,9 +83,9 @@ function Registrasi(){
             }catch(e){
 
                 const newError = {};
-
+                console.log(e.code)
                 switch(e.code){
-                    case 'auth/email-already-in-user':
+                    case 'auth/email-already-in-use':
                         newError.email = 'Email sudah terdaftar';
                     break;
                     case 'auth/invalid-email':
@@ -100,7 +100,7 @@ function Registrasi(){
                     break;
                     default:
                         newError.email = 'Terjadi kesalahan silahkan coba lagi';
-                        break;
+                    break;
                 }
 
                 setError(newError);

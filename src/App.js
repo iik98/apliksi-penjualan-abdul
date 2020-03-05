@@ -13,11 +13,16 @@ import FirebaseProvider from './components/FirebaseProvider';
 import CssBaseLine from '@material-ui/core/CssBaseline';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import theme from './config/theme';
+
+// notistack
+import {SnackbarProvider} from 'notistack';
 function App() {
   return (
     <>
     <CssBaseLine/>
     <ThemeProvider theme={theme}>
+    <SnackbarProvider maxSnack={3}
+    autoHideDuration={3000}>
     <FirebaseProvider >
 
     
@@ -35,6 +40,7 @@ function App() {
 
     </Router>
     </FirebaseProvider>
+    </SnackbarProvider>
     </ThemeProvider>
     </>
     
